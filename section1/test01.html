@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이
+            function solution(a,b,c){  
+                let answer = a;
+                let compareNum = (b > c)? c: b;
+
+                return (answer > compareNum)? compareNum : answer;
+            }
+            // 선생님 풀이
+            function solution_teacher(a,b,c){
+                let answer;
+                if(a<b) answer = a;
+                else answer = b;
+                if(c<answer) answer = c;
+
+                return answer;
+            }
+
+            console.log(solution(2,5,1));
+
+            // 매개변수가 배열이라면?
+            function solution_if(arr){  
+                return Math.min(...arr);
+            }
+            
+            arr=[6,5,11];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

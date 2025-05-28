@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내 풀이
+            function solution(arr){ 
+                arr = arr.filter((v) => v%2==1)
+                            .sort((a,b) => a-b);
+                let sum = arr.reduce((before, after) => before+after, 0);
+
+                console.log("합 : " + sum);
+                console.log("최솟값 : " + arr[0]);
+            }
+
+            // 선생님 풀이
+            function solution2(arr){
+                //let answer = Math.min(...arr);
+                //Math.min.apply(null, arr); => 이러면 전개연산자 사용안할수있음
+
+                let answer = [];
+                let sum=0, min=Number.MAX_SAFE_INTEGER;
+
+                for(let x of arr){
+                    if(x%2 === 1){
+                        sum+=x;
+                        if(x<min) min=x;
+                    }
+                }
+                answer.push(sum);
+                answer.push(min);
+
+                return answer;
+            }
+
+            console.log(solution([12, 77, 38, 41, 53, 92, 85]));
+        </script>
+    </body>
+</html>

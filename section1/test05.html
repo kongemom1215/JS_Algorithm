@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내 풀이
+            function solution(arr){ 
+                return arr.sort((a,b) => a-b)[0];
+            }
+
+            // 선생님 풀이
+            function solution2(arr){
+                let min=Number.MAX_SAFE_INTEGER; // 큰숫자로 초기화 why?
+                //let min = arr[0];
+
+                for(let i=0; i<arr.length; i++){
+                    if(arr[i] < min) min = arr[i];
+                }
+
+                return min;
+            }
+
+            console.log(solution([5,3,7,11,2,15,17]));
+        </script>
+    </body>
+</html>
