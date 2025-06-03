@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이 == 쌤풀이 2 
+            function solution(str){
+                let cnt = 0;
+                for(let char of str){
+                    if(char.charCodeAt() <= 90 && char.charCodeAt() >= 65)  cnt++; 
+                    //65~90 : 대문자, 97~122 : 소문자
+                }
+                return cnt;
+            }
+
+            // 쌤 풀이
+            function solution2(str){
+                let answer=0; 
+                for(let x of str){
+                    if(x===x.toUpperCase()) answer ++;
+                }
+
+                return answer;
+            }
+
+            console.log(solution("KoreaTimeGood"));
+        </script>
+    </body>
+</html>

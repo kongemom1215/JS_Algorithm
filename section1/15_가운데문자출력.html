@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이
+            function solution(str){
+                const len = str.length;
+                if(len % 2 == 0){
+                    return str.slice(len/2 - 1, len/2 + 1);
+                } else {
+                    return str.slice(Math.floor(len/2), Math.floor(len/2 + 1));
+                }
+            }
+
+            // 쌤풀이
+            function solution2(str){
+                let answer;
+                let mid = Math.floor(s.length/2);
+                if(s.length % 2 == 1) answer = s.substr(mid, 1);
+                else answer = s.substr(mid-1, 2);
+                return answer;
+            }
+
+            console.log(solution("study"));
+            console.log(solution("good"));
+        </script>
+    </body>
+</html>

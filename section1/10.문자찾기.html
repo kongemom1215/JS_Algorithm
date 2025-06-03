@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이
+            function solution(str, char){
+                let cnt = 0;
+                for(let c of str){
+                    if(c === char) cnt++;
+                }
+                return cnt;
+            }
+            
+
+            // 쌤 풀이
+            function solution2(str, char){
+                let answer = str.split(char); // ['COMPUTE', 'P', 'OG', 'AMMING']
+                return answer.length - 1;
+            }
+
+            let str = "COMPUTERPROGRAMMING";
+            let char = 'R';
+            console.log(solution2(str, char));
+        </script>
+    </body>
+</html>

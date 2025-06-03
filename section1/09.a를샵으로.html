@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이
+            function solution(str){
+                return str.replaceAll("A", "#");
+            }
+
+            // 쌤 풀이
+            function solution2(str){
+                let answer = "";
+                for(let x of s){
+                    if(x === 'A') answer +='#';
+                    else answer += x;
+                }
+                return answer;
+            }
+
+            function solution3(str){
+                let answer = str;             // 문자열은 주소 참조가 아닌 값이 복사된다. 
+                str = str.replace(/A/g, '#'); // A를 찾아라 g 전역으로
+                return answer;                // 즉여기서는 BANANA 그대로가 나온다. +
+            }
+
+
+            console.log(solution("BANANA"));
+        </script>
+    </body>
+</html>

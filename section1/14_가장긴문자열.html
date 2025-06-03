@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이 == 쌤풀이
+            function solution(num){
+                let max = 0;
+                let answer = "";
+                for(let i=0; i<num; i++){
+                    let str = prompt();
+                    if(max < str.length){
+                        max = str.length;
+                        answer = str;
+                    }
+                }
+                return answer;
+            }
+
+            console.log(solution(5));
+        </script>
+    </body>
+</html>
