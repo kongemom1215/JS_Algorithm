@@ -15,10 +15,17 @@
             }
 
             // 쌤풀이
-            function solution2(num){
+            function solution2(arr){
+                let answer;
+                answer = str.filter((v, i) => {
+                    if(str.indexOf(v) == i) return true;
+                });
+
+                return answer;
             }
 
             console.log(solution(5));
+            console.log(solution2(["good","time","good","time","student"]));
         </script>
     </body>
 </html>

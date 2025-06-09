@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이
+            function solution(arr){
+                let sum = 0;
+                let score = 1;
+                for(let correct of arr){
+                    if(correct == 1){
+                        sum += score++;
+                    } else {
+                        score = 1;
+                    }
+                }
+                return sum;
+            }
+
+            // 쌤풀이
+            function solution2(arr){
+                let answer=0, cnt=0;
+                for(let x of arr){
+                    if(x===1){
+                        cnt++;
+                        answer+=cnt;
+                    }
+                    else cnt=0;
+                }
+                   
+                return answer;
+            }
+
+            console.log(solution([1,0,1,1,1,0,0,1,1,0]));
+        </script>
+    </body>
+</html>

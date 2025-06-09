@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내풀이
+            function solution(arr){
+                let sortArr = [...arr].sort((a,b) => b-a);      // sort는 원본 배열을 변경시킨다
+                let gradeMap = new Map();
+                let grade = 1;
+
+                gradeMap.set(sortArr[0], grade);
+                for(let i=1; i<sortArr.length; i++){
+                    if(sortArr[i-1] == sortArr[i])
+                        gradeMap.set(sortArr[i], grade)
+                    else 
+                        gradeMap.set(sortArr[i], ++grade)
+                }
+                let result = [];
+                for(let i=0; i<arr.length; i++){
+                    result.push(gradeMap.get(arr[i]));
+                }
+                return result;
+            }
+
+            // 쌤풀이
+            // 이중 FOR문으로, 자기보다 큰 점수가있을때 등수를 1씩 +
+            function solution2(arr){
+                let n=arr.length;
+                let answer=Array.from({length:n}, ()=>1);
+                for(let i=0; i<n; i++){
+                    for(let j=0; j<n; j++){
+                        if(arr[j]>arr[i]) answer[i]++;
+                    }
+                }             
+                return answer;
+            }
+
+            console.log(solution([87,89,92,100,76]));
+            console.log(solution([87,89,89,100,76]));
+        </script>
+    </body>
+</html>
